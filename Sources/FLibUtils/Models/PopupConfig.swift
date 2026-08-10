@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-public enum FHKPopupType {
+public enum PopupType {
     case information(buttonText: String)
     case confirmation(okText: String, cancelText: String)
 }
 
-public struct FHKPopupConfig {
+public struct PopupConfig {
     let title: String
     let message: String
-    let type: FHKPopupType
+    let type: PopupType
     let onOK: () -> Void
     let onCancel: (() -> Void)?
 
     public init(
         title: String,
         message: String,
-        type: FHKPopupType,
+        type: PopupType,
         onOK: @escaping () -> Void,
         onCancel: (() -> Void)? = nil
     ) {
