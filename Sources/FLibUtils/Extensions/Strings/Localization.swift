@@ -20,7 +20,7 @@ public extension String {
     /// - Returns: The localized string.
     func localized(
         table: String = "Localizable",
-        bundle: Bundle = .main,
+        _ bundle: Bundle = .main,
         comment: String = ""
     ) -> String {
         NSLocalizedString(
@@ -42,10 +42,10 @@ public extension String {
     func localized(
         _ arguments: CVarArg...,
         table: String = "Localizable",
-        bundle: Bundle = .main,
+        _ bundle: Bundle = .main,
         comment: String = ""
     ) -> String {
-        let format = localized(table: table, bundle: bundle, comment: comment)
+        let format = localized(table: table, bundle, comment: comment)
         return String(format: format, arguments: arguments)
     }
     
